@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function gender() {
+            var char = document.getElementById("flexCheckDefault").value;
+            console.log(char);
+            if(char=="m") {
+                document.getElementById("floatingInput1").innerHTML ="male";
+            }else if(char=="f"){
+                
+                 document.getElementById("floatingInput1").innerHTML ="female";
+            }else
+                document.getElementById("floatingInput1").innerHTML ="invalid";
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/RPC-JP_Logo.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
+                Gender printer
+            </a>
+        </div>
+    </nav>
+    <div style="margin-top: 4%;margin-left: 4%;">
+        <h4>Gender checker</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Default radio
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Default checked radio
+            </label>
+        </div>
+        <br>
+        <h5>Output</h5>
+        <div class="form-floating mb-3 mt-4">
+            <p type="number" class="form-control" id="floatingInput1" placeholder="Integer only"><span
+                    id="output"></span>
+            </p>
+            <label for="floatingInput">Output</label>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary btn-sm" onclick="gender()">Small button</button>
+    </div>
+</body>
+
+</html>
