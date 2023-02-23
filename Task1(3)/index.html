@@ -13,9 +13,8 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function gender() {
+        function genderif() {
             var char = document.getElementById("formGroupExampleInput").value;
-            console.log(char);
             if(char=="m") {
                 document.getElementById("formGroupExampleInput2").innerHTML ="male";
             }else if(char=="f"){
@@ -23,6 +22,22 @@
                  document.getElementById("formGroupExampleInput2").innerHTML ="female";
             }else
                 document.getElementById("formGroupExampleInput2").innerHTML ="invalid";
+        }
+
+        function genderswitch(){
+            var char = document.getElementById("formGroupExampleInput").value;
+
+            switch(char){
+                case 'm':
+                    document.getElementById("formGroupExampleInput2").innerHTML = "male";
+                    break;
+                case 'f':
+                    document.getElementById("formGroupExampleInput2").innerHTML = "female";
+                    break;
+                default: 
+                    document.getElementById("formGroupExampleInput2").innerHTML = "invalid";
+                    break;
+            }
         }
     </script>
 </head> 
@@ -47,7 +62,10 @@
         </div>
         
         <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="gender()">Small button</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="genderif()">If check</button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary btn-sm" onclick="genderswitch()">Switch check</button>
     </div>
 </body>
 
