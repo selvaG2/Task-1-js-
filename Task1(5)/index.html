@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        .gradient-custom {
+
+            background: #f093fb;
+
+
+            background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+
+
+            background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+    <script>
+        function display() {
+            var first_name = document.register.fname.value;
+            var last_name = document.register.lname.value;
+            var user_name = document.register.uname.value;
+            var city = document.register.cityname.value;
+            var state = document.register.state.value;
+            var zip = document.register.zip.value;
+
+            document.write("First name : " + first_name + "<br>");
+            document.write("Last name  : " + last_name + "<br>");
+            document.write("User name  : " + user_name + "<br>");
+            document.write("City       : " + city + "<br>");
+            document.write("State      : " + state + "<br>");
+            document.write("Zip code   : " + zip + "<br>");
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/RPC-JP_Logo.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
+                Registration
+            </a>
+        </div>
+    </nav>
+
+
+    <form class="row g-3" onsubmit="display()" name="register">
+        <div class="col-md-4">
+            <label for="validationDefault01" class="form-label">First name</label>
+            <input type="text" class="form-control" id="validationDefault01" name="fname" required/>
+        </div>
+        <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="validationDefault02" name="lname" required/>
+        </div>
+        <div class="col-md-4">
+            <label for="validationDefaultUsername" class="form-label">Username</label>
+            <div class="input-group">
+                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                <input type="text" class="form-control" id="validationDefaultUsername"
+                    aria-describedby="inputGroupPrepend2" name="uname" required/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationDefault03" class="form-label">City</label>
+            <input type="text" class="form-control" id="validationDefault03" name="cityname" required/>
+        </div>
+        <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">State</label>
+            <select class="form-select" id="validationDefault04" d name="state" required>
+                <option selected disabled value="">Choose...</option>
+                <option value="BCA">BCA</option>
+                <option value="IT">IT</option>
+                <option value="CT">CT</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="validationDefault05" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="validationDefault05" name="zip" required/>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required/>
+                <label class="form-check-label" for="invalidCheck2">
+                    Agree to terms and conditions
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+
+
+
+</body>
+
+</html>
