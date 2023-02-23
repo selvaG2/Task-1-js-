@@ -14,15 +14,15 @@
 
     <script>
         function gender() {
-            var char = document.getElementById("flexCheckDefault").value;
+            var char = document.getElementById("formGroupExampleInput").value;
             console.log(char);
             if(char=="m") {
-                document.getElementById("floatingInput1").innerHTML ="male";
+                document.getElementById("formGroupExampleInput2").innerHTML ="male";
             }else if(char=="f"){
                 
-                 document.getElementById("floatingInput1").innerHTML ="female";
+                 document.getElementById("formGroupExampleInput2").innerHTML ="female";
             }else
-                document.getElementById("floatingInput1").innerHTML ="invalid";
+                document.getElementById("formGroupExampleInput2").innerHTML ="invalid";
         }
     </script>
 </head> 
@@ -37,27 +37,15 @@
         </div>
     </nav>
     <div style="margin-top: 4%;margin-left: 4%;">
-        <h4>Gender checker</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-                Default radio
-            </label>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Enter m/f </label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-                Default checked radio
-            </label>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Output</label>
+            <p type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder"></p>
         </div>
-        <br>
-        <h5>Output</h5>
-        <div class="form-floating mb-3 mt-4">
-            <p type="number" class="form-control" id="floatingInput1" placeholder="Integer only"><span
-                    id="output"></span>
-            </p>
-            <label for="floatingInput">Output</label>
-        </div>
+        
         <br>
         <button type="button" class="btn btn-primary btn-sm" onclick="gender()">Small button</button>
     </div>
