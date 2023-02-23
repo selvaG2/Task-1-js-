@@ -49,10 +49,37 @@
         }
         function seperate() {
             var name = document.getElementById("formGroupExampleInput").value;
-            frnds.join(",")
+            frnds.join(",");
             //console.log(frnds);
             document.getElementById("formGroupExampleInput2").innerHTML = frnds;
         }
+        function forloop() {
+            let len = frnds.length;
+            let txt = "";
+            for (let i = 0; i < len; i++) {
+                txt = txt + "  " + frnds[i];
+            }
+            document.getElementById("formGroupExampleInput2").innerHTML = txt;
+        }
+        function myforeach() {
+            frnds.forEach(frnd => document.getElementById("formGroupExampleInput2").innerHTML = frnd + "<br>");
+        }
+        function myforof() {
+            //var iterator = frnds.entries(); //returns new array iterator object that contains value of array
+            let txt1="";
+            for (let e of frnds) {
+                txt2 += e;
+            }
+            document.getElementById("formGroupExampleInput2").innerHTML = txt1;
+        }
+        function myforin() {
+            let txt2 ="";
+            for (let x in frnds) {
+                txt2 = txt2 + "  " + frnds;
+            }
+            document.getElementById("formGroupExampleInput2").innerHTML = txt2;
+        }
+
 
     </script>
 
@@ -95,6 +122,18 @@
         <br>
         <br>
         <button type="button" class="btn btn-primary btn-sm" onclick="seperate()">Seperation</button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary btn-sm" onclick="forloop()">For loop</button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary btn-sm" onclick="myforeach()">For each loop</button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary btn-sm" onclick="myforin()">For of loop</button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary btn-sm" onclick="myforof()">For in loop </button>
     </div>
 </body>
 
