@@ -66,14 +66,14 @@
         }
         function myforof() {
             //var iterator = frnds.entries(); //returns new array iterator object that contains value of array
-            let txt1="";
+            let txt1 = "";
             for (let e of frnds) {
                 txt2 += e;
             }
             document.getElementById("formGroupExampleInput2").innerHTML = txt1;
         }
         function myforin() {
-            let txt2 ="";
+            let txt2 = "";
             for (let x in frnds) {
                 txt2 = txt2 + "  " + frnds;
             }
@@ -104,6 +104,11 @@
             <label for="formGroupExampleInput2" class="form-label">Output</label>
             <p type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder"></p>
         </div>
+
+        Current Time: <span id="time"></span><br>
+        <script>
+
+        </script>
 
         <br>
         <button type="button" class="btn btn-primary btn-sm" onclick="addend()">Add @ Ending</button>
