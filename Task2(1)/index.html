@@ -62,20 +62,25 @@
             document.getElementById("formGroupExampleInput2").innerHTML = txt;
         }
         function myforeach() {
-            frnds.forEach(frnd => document.getElementById("formGroupExampleInput2").innerHTML = frnd + "<br>");
+            txt3 = " ";
+            frnds.forEach(myfunction);
+            document.getElementById("formGroupExampleInput2").innerHTML = txt3;
+
+            function myfunction(item) {
+                txt3 += item + " ";
+            }
         }
         function myforof() {
-            //var iterator = frnds.entries(); //returns new array iterator object that contains value of array
-            let txt1 = "";
+            let txt1 = " ";
             for (let e of frnds) {
-                txt2 += e;
+                txt1 += "  " + e;
             }
             document.getElementById("formGroupExampleInput2").innerHTML = txt1;
         }
         function myforin() {
-            let txt2 = "";
+            let txt2 = " ";
             for (let x in frnds) {
-                txt2 = txt2 + "  " + frnds;
+                txt2 = txt2 + "  " + frnds[x];
             }
             document.getElementById("formGroupExampleInput2").innerHTML = txt2;
         }
@@ -105,40 +110,76 @@
             <p type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder"></p>
         </div>
 
-        Current Time: <span id="time"></span><br>
+        Current Time: <span class="time">time</span><br>
         <script>
+            var date = new Date();
+            const todaytime = document.querySelector('.time');
 
+            function printtime() {
+                var date = new Date();
+                var hours = date.getHours();
+                var min = date.getMinutes();
+                var sec = date.getSeconds();
+                var period = "AM";
+
+                console.log(printtime);
+                if (hours == 0) {
+                    hours = 12;
+                }
+                if (hours > 12) {
+                    hours = hours - 12;
+                    period = "PM";
+                }
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (min < 10) {
+                    min = "0" + min;
+                }
+                if (sec < 10) {
+                    sec = "0" + sec;
+                }
+                var time = hours + ":" + min + ":" + sec + "-" +period;
+                document.querySelector(".time").innerHTML = time;
+                setTimeout(printtime,1000);
+            }
+            printtime();
         </script>
 
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="addend()">Add @ Ending</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="addbeg()">Add @ Beginning</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="delbeg()">Delete @ Beginning</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="delend()">Delete @ Ending</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="sort()">Sorting</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="seperate()">Seperation</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="forloop()">For loop</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="myforeach()">For each loop</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="myforin()">For of loop</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary btn-sm" onclick="myforof()">For in loop </button>
+        <div style="float: left; margin-left: 400px;margin-top: 8px;">
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="addend()">Add @ Ending</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="addbeg()">Add @ Beginning</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="delbeg()">Delete @ Beginning</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="delend()">Delete @ Ending</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="sort()">Sorting</button>
+            <br>
+            <br>
+        </div>
+        <div style="float: right; margin-right: 400px;margin-top: 50px;">
+            <button type="button" class="btn btn-primary btn-sm " onclick="seperate()">Seperation</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="forloop()">For loop</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="myforeach()">For each loop</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="myforof()">For of loop</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" onclick="myforin()">For in loop </button>
+        </div>
     </div>
 </body>
 
