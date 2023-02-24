@@ -113,7 +113,6 @@
         Current Time: <span class="time">time</span><br>
         <script>
             var date = new Date();
-            const todaytime = document.querySelector('.time');
 
             function printtime() {
                 var date = new Date();
@@ -139,9 +138,9 @@
                 if (sec < 10) {
                     sec = "0" + sec;
                 }
-                var time = hours + ":" + min + ":" + sec + "-" +period;
+                var time = hours + ":" + min + ":" + sec + "-" + period;
                 document.querySelector(".time").innerHTML = time;
-                setTimeout(printtime,1000);
+                setTimeout(printtime, 1000);
             }
             printtime();
         </script>
