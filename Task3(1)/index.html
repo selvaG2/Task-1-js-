@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <p id="emp" style="margin-left: 100px; margin-top: 50px;"></p>
+    <script>
+        function emp(name, age, gender, address) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.address = address;
+
+        }
+        var e = new emp("Selva", 19, "male", "3n,gopal swamy kovil street");
+        //document.write(e.name + "-" + e.age + "-" + e.gender + "-" + e.address);
+        function display() {
+            document.getElementById("emp").innerHTML = (e.name + "-" + e.age + "-" + e.gender + "-" + e.address);
+        }
+        display();
+    </script>
+
+    <p id="emp1"></p>
+    <script>
+
+        class Person {
+            constructor(name, age, gender, address) {
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+                this.address = address;
+
+                if (this.constructor === Person) {
+                    throw new Error("You Can`t create an instance for abstract class.");
+                }
+            }
+            display() {
+                throw new Error("Abstract class doesn`t have any implementation.");
+            }
+        }
+        class Employee extends Person {
+            constructor(name, age, gender, address, emp_code, department, designation, salary) {
+                super(name, age, gender, address);
+                this.emp_code = emp_code;
+                this.department = department;
+                this.designation = designation;
+                this.salary = salary;
+            }
+
+            display() {
+                document.getElementById("emp1").innerHTML = (e1.name + "-" + e1.age + "-" + e1.gender + "-" + e1.address + "-" + e1.emp_code + "-" + e1.department + "-" + e1.designation + "-" + e1.salary);
+            }
+        }
+
+        const e1 = new Employee("Selva", 19, "male", "3n,gopal swamy kovil street", "emp1", "Human resourse", "HR", 120000);
+        e1.display();
+
+
+    </script>
+
+
+
+</body>
+
+</html>
